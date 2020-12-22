@@ -32,5 +32,8 @@
     <ClInclude Include="xml\XmlFile.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="xml\utils\XmlStringUtils.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

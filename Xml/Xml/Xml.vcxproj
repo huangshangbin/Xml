@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xml\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="xml\utils\XmlStringUtils.hpp" />
     <ClInclude Include="xml\XmlFile.hpp" />
     <ClInclude Include="xml\XmlNode.hpp" />
   </ItemGroup>

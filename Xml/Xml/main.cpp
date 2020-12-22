@@ -4,26 +4,31 @@ using namespace std;
 
 #include <xml/tinyxml2/tinyxml2.h>
 #include <xml/XmlNode.hpp>
+#include <xml/XmlFile.hpp>
 
 using namespace tinyxml2;
 
 void test()
 {
-	XMLDocument doc;
-	doc.LoadFile("testXml.xml");
+	XmlFile testXmlFile;
+	testXmlFile.loadFile("testXml.xml");
 
-	XMLElement* element = doc.NewElement("User");
-	XmlNode xmlNode(element);
-	xmlNode.setKeyValue("name", "huang");
-	xmlNode.setContent("test");
+	testXmlFile.setNodePath("Root\\User");
 
-	XMLElement* rootElement = doc.RootElement();
-	XmlNode rootNode(rootElement);
+	XmlNode node = testXmlFile.getNode([](XmlNode& node) {
+		if (node.getKeyValue("age") == "25")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	});
 
-	rootNode.insertNode(xmlNode);
+	testXmlFile.rootNode().deleteChildNode(node);
 
-
-	doc.SaveFile("testXml.xml");
+	testXmlFile.saveFile();
 }
 
 int main()
