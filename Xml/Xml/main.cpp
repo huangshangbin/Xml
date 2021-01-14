@@ -11,18 +11,15 @@ using namespace tinyxml2;
 void test()
 {
 	XmlFile testXmlFile;
-	testXmlFile.loadFile("config.xml");
+	testXmlFile.loadFile("E:\\project\\c++\\github\\myProject\\Xml\\Xml\\x64\\Debug\\testXml.xml");
 
-	deque<XmlNode> mainUserNodeList = testXmlFile.rootNode().getChildNodeList("MainUser");
-
-	if (mainUserNodeList.size() <= 0)
+	deque<XmlNode> userNodeList = testXmlFile.rootNode().getChildNodeList("User");
+	
+	for (auto& userNode : userNodeList)
 	{
-		cout << "size <= 0" << endl;
+		cout << "value = " << userNode.getKeyValue("name1") << endl;
 	}
-	else
-	{
-		cout << mainUserNodeList[0].getKeyValue("login") << endl;
-	}
+	
 }
 
 int main()

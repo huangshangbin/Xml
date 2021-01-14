@@ -31,26 +31,51 @@ public:
 public:
 	void setName(string name)
 	{
+		if (m_element == nullptr)
+		{
+			return;
+		}
+
 		m_element->SetName(name.c_str());
 	}
 
 	void setContent(string content)
 	{
+		if (m_element == nullptr)
+		{
+			return;
+		}
+
 		m_element->SetText(content.c_str());
 	}
 
 	void setKeyValue(string key, string value)
 	{
+		if (m_element == nullptr)
+		{
+			return;
+		}
+
 		m_element->SetAttribute(key.c_str(), value.c_str());
 	}
 
 	string getName()
 	{
+		if (m_element == nullptr)
+		{
+			return "";
+		}
+
 		return m_element->Name();
 	}
 
 	string getContent()
 	{
+		if (m_element == nullptr)
+		{
+			return "";
+		}
+
 		if (m_element->FirstChild() == nullptr)
 		{
 			return "";
@@ -61,9 +86,17 @@ public:
 
 	string getKeyValue(string key)
 	{
+		if (m_element == nullptr)
+		{
+			return "";
+		}
+
 		char* temp = const_cast<char*> (m_element->Attribute(key.c_str()));
 
-		return temp;
+		if (temp == nullptr)
+		{
+			return "";
+		}
 	}
 
 
@@ -71,7 +104,7 @@ public:
 	deque<XmlNode> getChildNodeList(string childNodeName)
 	{
 		deque<XmlNode> childNodeList;
-		if (m_element == NULL)
+		if (m_element == nullptr)
 		{
 			return childNodeList;
 		}
@@ -95,7 +128,7 @@ public:
 	deque<XmlNode> getChildNodeList(std::function<bool(XmlNode& node)> filter)
 	{
 		deque<XmlNode> childNodeList;
-		if (m_element == NULL)
+		if (m_element == nullptr)
 		{
 			return childNodeList;
 		}
@@ -133,11 +166,21 @@ public:
 public:
 	void insertChildNode(XmlNode xmlNode)
 	{
+		if (m_element == nullptr)
+		{
+			return;
+		}
+
 		m_element->InsertEndChild(xmlNode.getElement());
 	}
 
 	void deleteChildNode(XmlNode xmlNode)
 	{
+		if (m_element == nullptr)
+		{
+			return;
+		}
+
 		m_element->DeleteChild(xmlNode.getElement());
 	}
 };
