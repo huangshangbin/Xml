@@ -97,6 +97,8 @@ public:
 		{
 			return "";
 		}
+
+		return temp;
 	}
 
 
