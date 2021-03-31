@@ -15,7 +15,7 @@ private:
 	string m_filePath;
 	string m_nodePath;
 
-	XMLDocument m_document;
+	tinyxml2::XMLDocument m_document;
 
 public:
 	XmlFile() {}
