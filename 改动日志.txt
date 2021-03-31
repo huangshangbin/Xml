@@ -1,0 +1,2 @@
+相对上一版本改动日志:
+     1 XmlFile XMLDocument 换成 tinyxml2::XMLDocument 以免与系统内置类冲突。
