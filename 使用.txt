@@ -8,7 +8,7 @@
 
 	XmlNode rootNode = testXmlFile.rootNode();
 
-	rootNode.insertNode(xmlNode);
+	rootNode.insertChildNode(xmlNode);
 
 
 	testXmlFile.saveFile();
