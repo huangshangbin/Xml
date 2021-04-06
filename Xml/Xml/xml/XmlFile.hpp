@@ -186,6 +186,6 @@ public:
 
 	void saveNewFile(string filePath)
 	{
-		m_document.SaveFile(m_filePath.c_str());
+		m_document.SaveFile(filePath.c_str());
 	}
 };
