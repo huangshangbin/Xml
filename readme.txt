@@ -5,10 +5,7 @@
 依赖:
     1  https://github.com/leethomason/tinyxml2
 	
-	
-	
-说明:
-    1 不支持多个根节点的情况。
+
     
    
 

@@ -1,5 +1,5 @@
 git add .
-git commit -am "XmlFile modify use.txt"
+git commit -am "modify readme"
 git push origin master
 echo "push complete"
 pause
