@@ -30,6 +30,11 @@ public:
 		m_document.LoadFile(filePath.c_str());
 	}
 
+	void parseString(string xmlStr)
+	{
+		m_document.Parse(xmlStr.c_str(), xmlStr.length());
+	}
+
 	void setNodePath(string nodePath)
 	{
 		m_nodePath = nodePath;

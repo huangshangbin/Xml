@@ -2,3 +2,4 @@
      1 XmlFile XMLDocument 换成 tinyxml2::XMLDocument 以免与系统内置类冲突。
      2 修复保存新文件出错。
      3 更新文档 使用.txt
+     4 添加 XmlFile  parseString， 解析xml字符串。
