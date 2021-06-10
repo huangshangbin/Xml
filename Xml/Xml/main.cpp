@@ -24,7 +24,10 @@ void test()
 
 int main()
 {
-	test();
+	XmlFile configFile;
+	configFile.loadFile("Mt4PluginCopyTrade_Config.xml");
+
+	configFile.saveFile();
 
 	int a;
 	cin >> a;
